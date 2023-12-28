@@ -4,6 +4,8 @@
  * [25] K 个一组翻转链表
  */
 
+import { CreateListNode } from "./util/listNode"
+
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -16,29 +18,6 @@
  *     }
  * }
  */
-class MyListNode2 {
-    head: ListNode = {
-        val: 0,
-        next: null
-    }
-
-    constructor(arr: number[]) {
-        arr.forEach(item => {
-            this.add2Tail(item);
-        })
-    }
-    
-    add2Tail(val: number) {
-        const node = new ListNode(val);
-        let pred = this.head;
-        while(pred?.next) {
-            pred = pred.next
-        }
-        pred.next = node
-    }
-
-}
-
 
  class ListNode {
     val: number
@@ -91,7 +70,7 @@ function reverseKGroup(head: ListNode | null, k: number): ListNode | null {
     return head;
 };
 
-const listNode = new MyListNode2([1,2,3,4,5])
+const listNode = new CreateListNode([1,2,3,4,5])
 reverseKGroup(listNode.head, 2)
 console.log('listNode.head', listNode.head)
 // @lc code=end
