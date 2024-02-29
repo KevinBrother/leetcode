@@ -21,7 +21,7 @@ import { CreateListNode, ListNode } from "./util/listNode";
 
 function getLen(head) {
     let len = 0;
-    let pred = head.next
+    let pred = head
     while(pred){
         len++;
         pred = pred.next;
@@ -34,7 +34,7 @@ function middleNode(head: ListNode | null): ListNode | null {
 
     let index = Math.floor(len / 2) + 1;
     let result = head;
-    while(index > 0) {
+    while(index > 1) {
         // @ts-ignore
         result = result?.next
         index--;
@@ -43,7 +43,9 @@ function middleNode(head: ListNode | null): ListNode | null {
     return result!;
 };
 
-const MyListNode2 = new CreateListNode([1,2,3,4,5])
-console.log('first', middleNode(MyListNode2.head));
+const MyListNode1 = new CreateListNode([1,2,3,4,5])
+console.log('MyListNode1', middleNode(MyListNode1.head));
+const MyListNode2 = new CreateListNode([1,2,3,4,5, 6])
+console.log('MyListNode2', middleNode(MyListNode2.head));
 // @lc code=end
 

@@ -8,10 +8,7 @@ export class ListNode {
 }
 
 export class CreateListNode {
-    head: ListNode = {
-        val: 0,
-        next: null
-    }
+    head: ListNode | null = null;
 
     constructor(arr: number[]) {
         arr.forEach(item => {
@@ -22,10 +19,14 @@ export class CreateListNode {
     add2Tail(val: number) {
         const node = new ListNode(val);
         let pred = this.head;
-        while(pred?.next) {
-            pred = pred.next
+        // 头节点
+        if(!pred) {
+            this.head = node;
+        }else {
+            while(pred.next) {
+                pred = pred?.next
+            }
+            pred.next = node;
         }
-        pred.next = node
     }
-
 }
