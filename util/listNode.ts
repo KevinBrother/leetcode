@@ -1,32 +1,52 @@
 export class ListNode {
-    val: number
-    next: ListNode | null
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = (val===undefined ? 0 : val)
-        this.next = (next===undefined ? null : next)
-    }
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
 }
 
 export class CreateListNode {
-    head: ListNode | null = null;
+  head: ListNode | null = null;
 
-    constructor(arr: number[]) {
-        arr.forEach(item => {
-            this.add2Tail(item);
-        })
+  constructor(arr: number[]) {
+    arr.forEach((item) => {
+      this.add2Tail(item);
+    });
+  }
+
+  add2Tail(val: number) {
+    const node = new ListNode(val);
+    let pred = this.head;
+    // 头节点
+    if (!pred) {
+      this.head = node;
+    } else {
+      while (pred.next) {
+        pred = pred?.next;
+      }
+      pred.next = node;
     }
-    
-    add2Tail(val: number) {
-        const node = new ListNode(val);
-        let pred = this.head;
-        // 头节点
-        if(!pred) {
-            this.head = node;
-        }else {
-            while(pred.next) {
-                pred = pred?.next
-            }
-            pred.next = node;
-        }
-    }
+  }
 }
+
+export class TreeNode {
+  val: number;
+  left: TreeNode | null;
+  right: TreeNode | null;
+  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.left = left === undefined ? null : left;
+    this.right = right === undefined ? null : right;
+  }
+}
+
+export function genTree(arr: number[]) {
+  arr.map
+
+
+
+  // 
+}
+
