@@ -20,11 +20,6 @@ import { TreeNode } from "./util/listNode";
  *     }
  * }
  */
-
-
-
-
-// 暴力解法，leetcode 会超出时间限制，时间复杂度位 preorder.lenght的等差数列的和
 function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
     const root = new TreeNode(preorder[0]);
     
@@ -44,29 +39,16 @@ function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
 
     createTree(preorder, inorder, root);
 
-
     return root;
 };
-
 
 function getSideArrays(preorder: number[], inorder: number[], root: TreeNode) {
     const inorderRootIndex = inorder.findIndex(item => item === root.val);
     const leftInorderArr = inorder.slice(0, inorderRootIndex);
     const rightInorderArr = inorder.slice(inorderRootIndex + 1);
 
-    const leftPreArr:number[] = [];
-    const rightPreArr:number[] = [];
-
-    for(let item of preorder) {
-        if(leftInorderArr.includes(item)) {
-            leftPreArr.push(item);
-            continue;
-        }
-
-        if(rightInorderArr.includes(item)) {
-            rightPreArr.push(item);
-        }
-    }
+    const leftPreArr = preorder.slice(1, leftInorderArr.length + 1);
+    const rightPreArr = preorder.slice(leftInorderArr.length + 1);
 
     return {leftInorderArr, rightInorderArr, leftPreArr, rightPreArr};
 } 
