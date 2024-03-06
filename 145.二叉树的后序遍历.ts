@@ -4,6 +4,8 @@
  * [145] 二叉树的后序遍历
  */
 
+import { TreeNode } from "./util/listNode";
+
 // @lc code=start
 /**
  * Definition for a binary tree node.
