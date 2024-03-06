@@ -21,38 +21,23 @@ import { TreeNode } from "./util/listNode";
  * }
  */
 function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
-    const root = new TreeNode(preorder[0]);
     
-    function createTree(preorder: number[], inorder: number[], root: TreeNode) {
-        const  {leftInorderArr, rightInorderArr, leftPreArr, rightPreArr} = getSideArrays(preorder, inorder, root);
-  
-        if(leftPreArr.length) {
-            root.left = new TreeNode(leftPreArr[0]);
-            createTree(leftPreArr, leftInorderArr, root.left);
+    function createTree(preorder: number[], inorder: number[], len: number) {
+        if(len === 0) {
+            return null;
         }
-  
-        if(rightPreArr.length) {
-            root.right = new TreeNode(rightPreArr[0]);
-            createTree(rightPreArr, rightInorderArr, root.right);
-        }
+        const node = new TreeNode(preorder[0]);
+
+        const inorderRootIndex = inorder.findIndex(item => item === node.val);
+        
+        node.left = createTree(preorder.slice(1, inorderRootIndex + 1), inorder.slice(0, inorderRootIndex + 1), inorderRootIndex);
+        node.right = createTree(preorder.slice(inorderRootIndex + 1), inorder.slice(inorderRootIndex + 1), len - inorderRootIndex -1);
+        return node;
     }
 
-    createTree(preorder, inorder, root);
+    return createTree(preorder, inorder, preorder.length);
 
-    return root;
 };
-
-function getSideArrays(preorder: number[], inorder: number[], root: TreeNode) {
-    const inorderRootIndex = inorder.findIndex(item => item === root.val);
-    const leftInorderArr = inorder.slice(0, inorderRootIndex);
-    const rightInorderArr = inorder.slice(inorderRootIndex + 1);
-
-    const leftPreArr = preorder.slice(1, leftInorderArr.length + 1);
-    const rightPreArr = preorder.slice(leftInorderArr.length + 1);
-
-    return {leftInorderArr, rightInorderArr, leftPreArr, rightPreArr};
-} 
-
 
 console.log('first', buildTree([3,9,20,15,7],  [9,3,15,20,7]))
 
