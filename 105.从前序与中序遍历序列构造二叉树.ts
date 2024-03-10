@@ -20,7 +20,7 @@ import { TreeNode } from "./util/listNode";
  *     }
  * }
  */
-function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
+export function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
     
     function createTree(preorder: number[], inorder: number[], len: number) {
         if(len === 0) {
@@ -39,7 +39,7 @@ function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
 
 };
 
-console.log('first', buildTree([3,9,20,15,7],  [9,3,15,20,7]))
+// console.log('first', buildTree([3,9,20,15,7],  [9,3,15,20,7]))
 
 // preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
 // 输出: [3,9,20,null,null,15,7]
