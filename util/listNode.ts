@@ -42,11 +42,28 @@ export class TreeNode {
   }
 }
 
-export function genTree(arr: number[]) {
-  arr.map
 
 
+export function BST2List(root: TreeNode | null) {
 
-  // 
+  let result = new ListNode();
+  let head = result;
+
+  cre(root);
+
+
+  return result.next;
+
+  function cre(node: TreeNode | null) {
+      if(!node) {
+          return;
+      }
+      
+      cre(node.left );
+      head.next = new ListNode(node.val);
+      head = head.next;
+      cre(node.right);
+
+  }
 }
 
