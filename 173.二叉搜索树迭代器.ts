@@ -23,32 +23,31 @@ import { ListNode, TreeNode } from "./util/listNode";
  */
 
 class BSTIterator {
-    head: ListNode | null;
+    array: number[];
+    index = 0;
     constructor(root: TreeNode | null) {
-       this.head =  this.tree2List(root);
+       this.array = this.tree2List(root);
     }
 
     next(): number {
-        const value = this.head?.val;
-        // @ts-ignore
-        this.head = this.head?.next;
+        const value = this.array[this.index];
+        this.index++;
         // @ts-ignore
         return value;
     }
 
     hasNext(): boolean {
-        return this.head? true : false
+        return this.index < this.array.length? true : false
     }
 
     tree2List(root: TreeNode | null) {
 
-        let result = new ListNode();
-        let head = result;
+        let result: number[] = []
         
         cre(root);
         
         
-        return result.next;
+        return result;
         
         function cre(node: TreeNode | null) {
             if(!node) {
@@ -56,8 +55,7 @@ class BSTIterator {
             }
             
             cre(node.left );
-            head.next = new ListNode(node.val);
-            head = head.next;
+            result.push(node.val)
             cre(node.right);
         
         }
