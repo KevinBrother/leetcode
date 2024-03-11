@@ -6,15 +6,17 @@
 
 // @lc code=start
 class NumArray {
-    nums: number[];
+    sums: number[] = [];
     constructor(nums: number[]) {
-        this.nums = nums;
+        let sum = 0;
+        for(let i = 0 ; i < nums.length; i++) {
+            sum += nums[i];
+            this.sums[i] = sum;
+        }
     }
 
     sumRange(left: number, right: number): number {
-        return this.nums.slice(left, right+1).reduce((pre, cur) => {
-            return pre + cur;
-        }, 0)
+        return left === 0 ? this.sums[right] : this.sums[right] - this.sums[left -1];
     }
 }
 
@@ -40,3 +42,7 @@ class NumArray {
 //       -2       -2    2   -1
 //       / \     /  \   
 //     -2   0   3   -5  
+
+// 1, 2, 3,
+
+// 1, 3, 6
