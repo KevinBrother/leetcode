@@ -44,7 +44,7 @@ export class TreeNode {
 
 
 
-export function BST2List(root: TreeNode | null) {
+export function BST2LinkList(root: TreeNode | null) {
 
   let result = new ListNode();
   let head = result;
