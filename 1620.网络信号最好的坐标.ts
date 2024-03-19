@@ -5,6 +5,8 @@
  */
 
 // @lc code=start
+// TODO 思路没问题，但是结果不对
+// https://leetcode.cn/problems/coordinate-with-maximum-network-quality/solutions/1940863/wang-luo-xin-hao-zui-hao-de-zuo-biao-by-7x1qm/
 function bestCoordinate(towers: number[][], radius: number): number[] {
   const { maxX, maxY } = getMaxPoint(towers);
   let result = [0, 0];
