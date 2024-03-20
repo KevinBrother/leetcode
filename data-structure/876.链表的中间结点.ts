@@ -4,7 +4,7 @@
  * [876] 链表的中间结点
  */
 
-import { CreateListNode, ListNode } from "./util/listNode";
+import { CreateListNode, ListNode } from "../util/listNode";
 
 // @lc code=start
 /**

@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-function removeDuplicates(s: string): string {
+function removeDuplicates2(s: string): string {
     const resultStack: string[] = [];
     for(let i  = 0; i < s.length; i++) {
         const char = s[i];
@@ -18,6 +18,6 @@ function removeDuplicates(s: string): string {
     return resultStack.join('')
 };
 
-console.log('remove', removeDuplicates('abbaca'))
+console.log('remove', removeDuplicates2('abbaca'))
 // @lc code=end
 

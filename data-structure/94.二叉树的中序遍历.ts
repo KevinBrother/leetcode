@@ -4,7 +4,7 @@
  * [94] 二叉树的中序遍历
  */
 
-import { TreeNode } from "./util/listNode";
+import { TreeNode } from "../util/listNode";
 
 // @lc code=start
 /**

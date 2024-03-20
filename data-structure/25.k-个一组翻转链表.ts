@@ -4,7 +4,7 @@
  * [25] K 个一组翻转链表
  */
 
-import { CreateListNode } from "./util/listNode"
+import { CreateListNode } from "../util/listNode"
 
 // @lc code=start
 /**

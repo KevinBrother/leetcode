@@ -16,7 +16,7 @@ class NumArray {
     }
 
     sumRange(left: number, right: number): number {
-        return left === 0 ? this.sums[right] : this.sums[right] - this.sums[left -1];
+        return left === 0 ? this.sums[right] : this.sums[right] - this.sums[left -1]
     }
 }
 
