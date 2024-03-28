@@ -4,7 +4,7 @@
  * [105] 从前序与中序遍历序列构造二叉树
  */
 
-import { TreeNode } from "../util/listNode";
+import { TreeNode } from "../../util/listNode";
 
 // @lc code=start
 /**

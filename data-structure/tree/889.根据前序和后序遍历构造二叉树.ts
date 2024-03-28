@@ -4,7 +4,7 @@
  * [889] 根据前序和后序遍历构造二叉树
  */
 
-import { TreeNode } from "../util/listNode";
+import { TreeNode } from "../../util/listNode";
 
 // @lc code=start
 /**
