@@ -19,45 +19,48 @@ import { ListNode } from "../../util/listNode";
  * }
  */
 
-function recursive(curL1: ListNode | null, curL2: ListNode | null): ListNode | null {
-    if(curL1 === null) {
-        return curL2;
+function recursive(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+    if(list1 === null) {
+        return list2;
     }
 
-    if(curL2 === null) {
-        return curL1;
+    if(list2 === null) {
+        return list1;
     }
-    return recursive(curL1, curL2)
 
+    // 判断当前节点与两个列表节点的值大小
+    if(list1.val <= list2.val) {
+        list1.next = recursive(list1.next, list2);
+        return list1;
+    }else {
+        list2.next =  recursive(list1, list2.next);
+        return list2
+    }
 }
 
 
 function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
-    function recursive(cur: ListNode, curL1: ListNode | null, curL2: ListNode | null) {
-        if(curL1 === null) {
-            cur.next = curL2;
-            return;
+    
+    function recursive(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+        if(list1 === null) {
+            return list2;
         }
     
-        if(curL2 === null) {
-            cur.next = curL1;
-            return;
+        if(list2 === null) {
+            return list1;
         }
     
         // 判断当前节点与两个列表节点的值大小
-        if(curL1.val <= curL2.val) {
-            cur.next = curL1;
-            recursive(cur.next, curL1.next, curL2);
+        if(list1.val <= list2.val) {
+            list1.next = recursive(list1.next, list2);
+            return list1;
         }else {
-            cur.next = curL2;
-            recursive(cur.next, curL1, curL2.next);
+            list2.next =  recursive(list1, list2.next);
+            return list2
         }
-    
     }
-    
-    const preHead = new ListNode();
-    recursive(preHead, list1, list2);
-    return preHead.next;
+
+    return recursive(list1, list2)
 
 };
 // @lc code=end
