@@ -21,7 +21,7 @@ import { TreeNode } from "../../util/listNode";
  * }
  */
 
-function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
+export function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
     
     function createTree(inorder: number[], postorder: number[], len: number) {
         if(len === 0 ) {
