@@ -23,7 +23,7 @@ import { TreeNode } from "../../../util/listNode";
  */
 
 //  在AVL树中，任一节点对应的两棵子树的最大高度差为1
-function isBalanced(root: TreeNode | null): boolean {
+/* function isBalanced(root: TreeNode | null): boolean {
 
   function dfs(root: TreeNode | null) {
     if (root === null) {
@@ -49,6 +49,33 @@ function isBalanced(root: TreeNode | null): boolean {
 
 
   return dfs(root) === -1 ? false : true;
+}
+ */
+function isBalanced(root: TreeNode | null): boolean {
+
+  function dfs(root: TreeNode | null) {
+    if (root === null) {
+      return [0, true];
+    }
+
+    let [leftDepth, isLeftAVL] = dfs(root.left);
+
+    if (!isLeftAVL) {
+        return [leftDepth, false];
+    }
+
+    let [rightDepth, isRightAVL] = dfs(root.right);
+
+    if (!isRightAVL) {
+      return [rightDepth, false];
+    }
+
+    let div = Math.abs(rightDepth - leftDepth);
+
+    return [Math.max(rightDepth, leftDepth) + 1, div <= 1]
+  }
+
+  return  dfs(root)[1];
 }
 
 // const tree = buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]);
