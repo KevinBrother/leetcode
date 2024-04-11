@@ -21,7 +21,8 @@ import { TreeNode } from "../../../util/listNode";
  * }
  */
 
-function maxAncestorDiff(root: TreeNode | null): number {
+// 递
+function maxAncestorDiff_DI(root: TreeNode | null): number {
   let rst = 0;
 
   function dfs(node, min, max) {
@@ -38,6 +39,31 @@ function maxAncestorDiff(root: TreeNode | null): number {
   }
 
   dfs(root, root?.val, root?.val);
+
+  return rst;
+}
+
+// 归
+function maxAncestorDiff(root: TreeNode | null): number {
+  let rst = 0;
+
+  function dfs(node) {
+    if (node === null) {
+      return [Infinity, -Infinity];
+    }
+
+    const [leftMin, leftMax] = dfs(node.left);
+    const [rightMin, rightMax] = dfs(node.right);
+
+    let min = Math.min(leftMin, node.val, rightMin);
+    let max = Math.max(leftMax, node.val, rightMax);
+
+    rst = Math.max(rst, node.val - min, max - node.val);
+
+    return [ min, max ];
+  }
+
+  dfs(root);
 
   return rst;
 }
