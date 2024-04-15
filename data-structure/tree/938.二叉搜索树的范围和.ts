@@ -4,7 +4,7 @@
  * [938] 二叉搜索树的范围和
  */
 
-import { TreeNode } from "./util/listNode";
+import { TreeNode } from "../../util/listNode";
 
 // @lc code=start
 /**
