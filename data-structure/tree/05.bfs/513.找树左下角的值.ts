@@ -4,7 +4,7 @@
  * [513] 找树左下角的值
  */
 
-import { TreeNode } from "./util/listNode";
+import { TreeNode } from "../../../util/listNode";
 
 // @lc code=start
 /**
