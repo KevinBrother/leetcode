@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "LeetCode",
+            "type": "shell",
+            "command": "clang++",
+            "args": [
+                "${file}",
+                "-std=c++17",
+                "-o",
+                "${fileBasenameNoExtension}.out",
+                "-Wall",
+                "-g",
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
