@@ -8,19 +8,12 @@
             "name": "LeetCode",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}.out",
-            "args": [],
+            "program": "${fileDirname}/output/${fileBasenameNoExtension}",
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
-            "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing"
-                }
-            ],
+            "miDebuggerPath": "gdb",
             "preLaunchTask": "LeetCode"
         }
     ]

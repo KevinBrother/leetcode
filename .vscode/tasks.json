@@ -4,19 +4,21 @@
         {
             "label": "LeetCode",
             "type": "shell",
-            "command": "clang++",
+            "command": "g++",
             "args": [
-                "${file}",
-                "-std=c++17",
-                "-o",
-                "${fileBasenameNoExtension}.out",
                 "-Wall",
-                "-g",
+                "-Wextra",
+                "-g3",
+                "-std=c++17",
+                "${file}",
+                "-o",
+                "${fileDirname}/output/${fileBasenameNoExtension}",
             ],
             "group": {
-                "kind": "test",
+                "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         }
     ]
 }
