@@ -15,20 +15,27 @@ public:
         vector<vector<int>> rst;
         sort(nums.begin(), nums.end());
         for(int i = 0; i < nums.size() - 2; i++) {
+            int len = nums.size();
             int x = nums[i];
             if(i > 0 && x == nums[i -1]) continue;
-
-            int left = i +1, right = nums.size() - 1;
+            if(x + nums[i + 1] + nums[i +2] > 0) break; // 优化一 当前数与后面两个数都已经大于 0 了，代表整个列表已经没有 等于零的可能。
+            if(x + nums[len - 2] + nums[len -1] < 0) continue; // 优化二 当前数与后面最大的两个数都小于 0 了， 代表当前轮次 已经没有 等于零的可能。
+            int left = i +1, right = len - 1;
 
             while(left < right) {
-                 int curValue = nums[i], leftValue = nums[left], rightValue = nums[right];
-                int sum = curValue + leftValue + rightValue;
-                if(sum == 0)
+                int sum = x + nums[left] + nums[right];
+                if(sum > 0) {
+                    --right;
+                }else if (sum < 0){
+                    ++left;
+                }else  {
                     rst.push_back({nums[i], nums[left], nums[right] });
-                sum > 0 ? right-- : left++ ;
+                    for(++left; left < right && nums[left] == nums[left -1] ; ++left);
+                    for(--right; left < right && nums[right] == nums[right + 1]; --right);
+                }
             }
         }
-        
+
         return rst;
     }
 };
