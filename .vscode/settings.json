@@ -4,6 +4,8 @@
     "lldb.dereferencePointers": true,
     "lldb.consoleMode": "commands",
     "files.associations": {
-        "limits.h": "c"
+        "limits.h": "c",
+        "vector": "cpp",
+        "ostream": "cpp"
     }
 }
