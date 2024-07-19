@@ -17,7 +17,7 @@ int main() {
     int returnSize;
     double* rst = convertTemperature(36.50, &returnSize);
 
-    for (int i = 0; i < returnSize; i++) {
+    for (int i = 0; i != returnSize; ++i) {
         printf("returnSize:%d, before free rst%d: %.5f\n", returnSize, i, rst[i]);
     }
 
