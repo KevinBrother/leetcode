@@ -47,6 +47,9 @@
         "tuple": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "stdbool.h": "c",
+        "stdio.h": "c",
+        "tree.h": "c"
     }
 }
