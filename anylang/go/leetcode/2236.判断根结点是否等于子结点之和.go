@@ -18,5 +18,5 @@ func CheckTree() {
 		},
 	}
 
-	fmt.Println(checkTree(&root))
+	fmt.Println("CheckTree: ", checkTree(&root))
 }
