@@ -9,8 +9,7 @@ func xorOperation(n int, start int) int {
 
 	rst := start
 	for i := 1; i < n; i++ {
-		next := start + 2*i
-		rst = rst ^ next
+		rst ^= start + 2*i
 	}
 
 	return rst

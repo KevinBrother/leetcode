@@ -10,8 +10,7 @@ class Solution {
 
         int rst = start;
         for (int i = 1; i < n; i++) {
-            int next = start + 2 * i;
-            rst = rst ^ next;
+            rst ^= start + 2 * i;
         }
 
         return rst;
