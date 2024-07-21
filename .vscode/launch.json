@@ -12,16 +12,19 @@
             "program": "${fileDirname}"
         },
         {
-            "name": "(lldb) Launch",
+            "name": "(c/c++) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
-            "args": [],
-            "stopAtEntry": false,
+            "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+            "args": ["-g"],
+            // "stopAtEntry": false,
             "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb"
+            // "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "windows": {
+                "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe"
+            }
         }
     ]
 }
