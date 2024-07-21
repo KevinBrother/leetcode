@@ -3,6 +3,7 @@ package main
 import "leetcodeModule/leetcode"
 
 func main() {
+	leetcode.XorOperation()
 
 	leetcode.CheckTree()
 
