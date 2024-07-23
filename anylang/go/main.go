@@ -3,6 +3,8 @@ package main
 import "leetcodeModule/leetcode"
 
 func main() {
+	leetcode.CountGoodTriplets()
+
 	leetcode.NumIdenticalPairs()
 
 	leetcode.XorOperation()
@@ -12,6 +14,5 @@ func main() {
 	leetcode.SmallestEvenMultiple()
 
 	leetcode.ConvertTemperature()
-
 	leetcode.Sum()
 }

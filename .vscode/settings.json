@@ -50,6 +50,13 @@
         "algorithm": "cpp",
         "stdbool.h": "c",
         "stdio.h": "c",
-        "tree.h": "c"
+        "tree.h": "c",
+        "unordered_map": "cpp",
+        "stdlib.h": "c",
+        "__hash_table": "cpp",
+        "__node_handle": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "optional": "cpp"
     }
 }
