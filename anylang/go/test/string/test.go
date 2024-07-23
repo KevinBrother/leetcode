@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func add(x, y int) (z int) {
 	defer func() {
@@ -22,6 +25,8 @@ func dataStruct() {
 	var str2 string = "str2"
 	str3 := "str3"
 
-	fmt.Println(str1, str2, str3, len(str1), str1[0])
+	newStr := strings.Replace("abcd", "b", "a", 1)
+
+	fmt.Println(str1, str2, str3, len(str1), str1[0], "newStr:", newStr)
 
 }

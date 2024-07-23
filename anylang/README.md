@@ -32,6 +32,21 @@ str1[0]
 // 修改第一个字符
 // 在 Go 中，字符串是不可变的，因此无法直接修改字符串的某个字符
 
+// func Replace(s, old, new string, n int) string;
+newStr := strings.Replace("abcd", "b", "a", 1)
+
+```
+
+``` c
+
+ char str[] = "abcd";
+ str[1] = 'a';
+```
+
+``` c++
+std::string str = "abcd";
+str.replace(1, 1, "a");
+
 ```
 
 #### 数组
