@@ -5,7 +5,7 @@
 
 class Solution {
    public:
-    int countGoodTriplets(std::vector<int> arr, int a, int b, int c) {
+    int countGoodTriplets(std::vector<int> &arr, int a, int b, int c) {
         int rst = 0;
         int length = arr.size();
         for (int i = 0; i < length; i++) {

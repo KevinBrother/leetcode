@@ -13,7 +13,10 @@
 
 #### 字符串
 
+- 增删改查
+
 ``` go
+// 文档地址： https://pkg.go.dev/strings@go1.22.5#section-documentation
 // 定义
 var str1 = "str1"
 var str2 string = "str2"
@@ -27,6 +30,7 @@ len(str1);
 str1[0]
 
 // 修改第一个字符
+// 在 Go 中，字符串是不可变的，因此无法直接修改字符串的某个字符
 
 ```
 
