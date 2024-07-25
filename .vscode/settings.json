@@ -58,6 +58,9 @@
         "__tree": "cpp",
         "map": "cpp",
         "optional": "cpp",
-        "__assert": "cpp"
+        "__assert": "cpp",
+        "alloca.h": "c",
+        "_malloc.h": "c",
+        "string.h": "c"
     }
 }
