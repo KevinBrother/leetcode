@@ -16,7 +16,7 @@ void update(int arr[], int idx, int newValue) {
 }
 
 // 增
-void addElement(int arr[], int *size, int newValue) {
+void addElement(int *arr, int *size, int newValue) {
     (*size)++;
 
     printf("before realloc arr pValue %p\n", arr);
@@ -26,6 +26,20 @@ void addElement(int arr[], int *size, int newValue) {
     printf("after realloc arr pValue %p\n", arr);
 
     arr[*size - 1] = newValue;
+}
+
+// 删
+void deleteElement(int *arr, int *size, int idx) {
+    if (idx < 0 || idx > *size) {
+        printf("idx out of bounds\n");
+    }
+
+    // 整体向后移
+    for (int i = idx; i < *size - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    (*size)--;
 }
 
 int main() {
@@ -46,10 +60,20 @@ int main() {
     update(arr, 3, 20);
 
     addElement(arr, &size, 999);
+    for (int j = 0; j < size; j++) {
+        printf("arr[%d]: %d、", j, arr[j]);
+    }
+    printf("\n");
+
+    printf("size: %d\n", size);
+
+    deleteElement(arr, &size, 4);
 
     for (int j = 0; j < size; j++) {
-        printf("arr[%d]: %d\n", j, arr[j]);
+        printf("arr[%d]: %d、", j, arr[j]);
     }
+    printf("\n");
 
+    printf("size: %d\n", size);
     return 0;
 }
