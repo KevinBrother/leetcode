@@ -13,6 +13,7 @@
 
 #### 字符串
 
+- 字符串都是不可变的，都需要通过某些方法来改变
 - 增删改查
 
 ``` go
@@ -52,8 +53,26 @@ str.replace(1, 1, "a");
 #### 数组
 
 ``` go
+// 数组，长度不可变
+var arr0 [5]int = [5]int{1, 2, 3, 4, 5}
 
+// 切片，长度可变
+var arr1 = []int{1, 2, 3, 4, 5}
+```
 
+``` c
+// 数组,长度不可变
+int arr2[] = {1, 2, 3, 4, 5}
+// malloc 分配内存，可通过 realloc 修改长度
+int *arr = malloc(size * sizeof(int));
+arr = realloc(arr, (*size) * sizeof(int));
+```
+
+``` c++
+std::vector<int> arr3 = {1, 2, 3, 4, 5};
+arr3.size();
+arr3.push_back(6);
+arr3.pop_back();
 ```
 
 #### map
