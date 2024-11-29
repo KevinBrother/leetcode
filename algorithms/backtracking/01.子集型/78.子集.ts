@@ -50,7 +50,7 @@ function subsets2(nums: number[]): number[][] {
 
     for (let j = i; j < nums.length; j++) {
       path.push(nums[j]);
-      dfs(i + 1);
+      dfs(j + 1);
       path.pop();
     }
   }
@@ -60,5 +60,5 @@ function subsets2(nums: number[]): number[][] {
   return rst;
 }
 
-console.log("🚀 ~ subsets ~ subsets:", subsets2([1,2]))
+console.log("🚀 ~ subsets ~ subsets:", subsets2([1,2, 3]))
 
