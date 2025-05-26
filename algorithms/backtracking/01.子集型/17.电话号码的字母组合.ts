@@ -19,33 +19,34 @@ const phoneArr = [
 ];
 
 function letterCombinations(digits: string): string[] {
-  let result: string[] = [];
-  let path: string[] = [];
-
-  let n = digits.length;
-
-  if(n === 0) {
-    return []
+  const rst:string[] = [];
+  if(!digits) {
+    return rst;
   }
 
+  const path: string[] = [];
+  
   function dfs(i) {
-    if (i === n) {
-      result.push(path.join(''));
-      return;
+    
+    if(i === digits.length) {
+      rst.push(path.join(''));
+      return; 
     }
-
-    for (let c of phoneArr[Number(digits[i])]) {
-      path.push(c);
-      dfs(i + 1);
+    
+    const curStr = phoneArr[digits[i]]
+    for (let index = 0; index < curStr.length; index++) {
+      path.push(curStr[index]);
+      dfs(i + 1)
       path.pop();
-    //   path[i] = c;
-    //   dfs(i + 1);
+
+      //   path[i] = c;
+      //   dfs(i + 1);
     }
   }
 
-  dfs(0);
+  dfs(0)
 
-  return result;
+  return rst;
 }
 
 console.log("first", letterCombinations("23"));
