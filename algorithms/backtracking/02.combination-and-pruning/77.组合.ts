@@ -39,15 +39,15 @@ function combine(n: number, k: number): number[][] {
             return;
         }
 
-        for (let j = i; j < n; j++) {
+        for (let j = i; j <= n; j++) {
             // path.push(array[j])
-            path.push(j + 1)
+            path.push(j)
             dfs(j + 1);
             path.pop()
         }
     }
 
-    dfs(0);
+    dfs(1);
 
     return rst;
 };
